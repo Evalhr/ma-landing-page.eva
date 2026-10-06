@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHRONOSON — 130 ans de musique et de chanson</title>
+<meta name="description" content="De la cire de 1897 au streaming : dix époques, les inventions qui ont tout changé, les courbes de la durée des morceaux. Avec une ambiance sonore générée en direct pour chaque époque.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-era="1897">
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand">
+    <span class="brand-disc" aria-hidden="true"></span>
+    CHRONOSON
+  </a>
+  <nav class="nav-links" aria-label="Navigation principale">
+    <a href="#frise" data-nav>Frise</a>
+    <a href="#ecouter" data-nav>Écouter</a>
+    <a href="#inventions" data-nav>Inventions</a>
+    <a href="#courbes" data-nav>Courbes</a>
+    <a href="#quiz" data-nav>Quiz</a>
+  </nav>
+  <a href="#frise" class="btn btn-sm">Découvrir</a>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> 1897 → 2026 · dix époques</p>
+        <h1 class="hero-title">
+          L'évolution<br>
+          de la <em>chanson</em>
+        </h1>
+        <p class="hero-sub">
+          Du cylindre de cire au flux illimité : ce qui change, ce qui disparaît,
+          ce qui revient. Faites défiler la frise, écoutez l'ambiance de chaque
+          époque — <strong>générée en direct</strong> dans votre navigateur, aucun
+          fichier audio — et mesurez ce que la chanson a gagné, puis perdu, en
+          130 ans.
+        </p>
+        <div class="hero-actions">
+          <a href="#frise" class="btn btn-primary">Parcourir la frise</a>
+          <button class="btn btn-ghost" data-action="play">
+            <span class="ico" aria-hidden="true">▶</span> Écouter l'époque
+          </button>
+        </div>
+        <dl class="hero-stats">
+          <dt>Années</dt><dd data-count="130">0</dd>
+          <dt>Époques</dt><dd data-count="10">0</dd>
+          <dt>Inventions</dt><dd data-count="16">0</dd>
+          <dt>Formats</dt><dd>∞</dd>
+        </dl>
+        <p class="hero-hint mono">
+          sur la frise : <kbd>←</kbd> <kbd>→</kbd> pour changer d'époque · <kbd>P</kbd> lecture / pause
+        </p>
+      </div>
+
+      <div class="hero-art">
+        <div class="vinyl" id="vinyl" aria-hidden="true">
+          <div class="vinyl-label">
+            <span class="vinyl-year mono" id="vinyl-year">1897</span>
+            <span class="vinyl-style" id="vinyl-style">Cylindre de cire</span>
+          </div>
+        </div>
+        <p class="art-caption mono" id="art-caption">1887-1919 — la voix est enregistrée, mais fragile, et la cire s'use vite</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRISE ============ -->
+  <section class="timeline" id="frise">
+    <div class="rail-wrap">
+      <div class="rail" id="rail" role="tablist" aria-label="Choisir une époque"></div>
+    </div>
+
+    <div class="panel" id="panel" role="tabpanel" tabindex="0" aria-live="polite"></div>
+
+    <noscript>
+      <div class="noscript">
+        <h2>La frise en toutes lettres</h2>
+        <ol>
+          <li><strong>1897-1919</strong> — Les premiers disques : phonographe, cylindre de cire, disque 78 tours. Chanson de café-concert.</li>
+          <li><strong>1920-1939</strong> — L'âge d'or du 78 tours : jazz, swing, blues, et la radio qui popularise la chanson.</li>
+          <li><strong>1940-1959</strong> — Le vinyle prend son échelle : 33 cm, 45 tours, transistor, rock'n'roll, chanson d'auteur.</li>
+          <li><strong>1960-1969</strong> — La sixties : beat, soul, British Invasion, premiers albums de référence.</li>
+          <li><strong>1970-1979</strong> — Disco, funk, punk et les prémices du hip-hop ; la cassette et le synthétiseur modulaire.</li>
+          <li><strong>1980-1989</strong> — Le tout-numérique : CD, MTV, MIDI, sampler, synthpop et new wave.</li>
+          <li><strong>1990-1999</strong> — Home studio, internet, MP3 : la French touch, la techno, le rap français.</li>
+          <li><strong>2000-2009</strong> — Numérique : iPod, YouTube, streaming naissant, retour du format long.</li>
+          <li><strong>2010-2019</strong> — L'ère des algorithmes : streaming, trap, rap français, morceaux de deux minutes.</li>
+          <li><strong>2020-2026</strong> — Le melting-point : IA générative, drill, hyperpop, et le retour du vinyle.</li>
+        </ol>
+      </div>
+    </noscript>
+  </section>
+
+  <!-- ============ SALLE D'ÉCOUTE ============ -->
+  <section class="studio" id="ecouter">
+    <div class="studio-inner">
+      <div class="studio-head">
+        <div>
+          <p class="kicker kicker-light">Salle d'écoute</p>
+          <h2 class="studio-title" id="studio-era">1897-1919 · Les premiers disques</h2>
+        </div>
+        <div class="studio-controls">
+          <button class="step-btn" data-action="prev" aria-label="Époque précédente">←</button>
+          <button class="play-btn" data-action="play" aria-label="Lecture" aria-pressed="false">
+            <span class="play-ico play" aria-hidden="true"></span>
+            <span class="play-ico pause" aria-hidden="true"></span>
+          </button>
+          <button class="step-btn" data-action="next" aria-label="Époque suivante">→</button>
+        </div>
+      </div>
+
+      <div class="viz-wrap">
+        <canvas id="viz" width="1200" height="220" aria-hidden="true"></canvas>
+        <p class="viz-idle mono" id="viz-idle">appuie sur lecture — le son est synthétisé à la volée</p>
+      </div>
+
+      <div class="studio-meta">
+        <div class="studio-tags" id="studio-tags"></div>
+        <p class="studio-note">
+          Rythme, accords, batterie et timbre sont <strong>générés par code</strong>
+          pour chaque époque : 3/4 swing et crin-crin en 1920, boogie à la basse en 1950,
+          808 glissée en 2010. <span class="mono">Web Audio — aucun fichier, aucun téléchargement.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INVENTIONS ============ -->
+  <section class="section" id="inventions">
+    <div class="section-head">
+      <div>
+        <p class="kicker">01 — Supports &amp; outils</p>
+        <h2 class="section-title">Ce qui a tout changé</h2>
+      </div>
+      <p class="section-note muted">
+        Chaque Support a déplacé le centre de gravité : du disque au disque, de la
+        copie au flux. Rien de tout cela n'est terminé.
+      </p>
+    </div>
+    <ul class="inv-grid" id="inv-grid"></ul>
+  </section>
+
+  <!-- ============ COURBES ============ -->
+  <section class="section" id="courbes">
+    <div class="section-head">
+      <div>
+        <p class="kicker">02 — Mesures</p>
+        <h2 class="section-title">Deux courbes parlantes</h2>
+      </div>
+      <p class="section-note muted">
+        Ordres de grandeur pédagogiques, construits à partir de sources publiques
+        (Hit-Paradys / IFPI). Ils donnent la forme, pas le chiffre exact.
+      </p>
+    </div>
+
+    <figure class="chart-card" data-reveal>
+      <figcaption>
+        <h3>Durée moyenne d'un morceau</h3>
+        <p class="muted">Elle tombe avec le 45 tours, remonte avec le CD et le streaming, puis s'effondre à nouveau.</p>
+      </figcaption>
+      <div class="chart" id="chart-length"></div>
+      <p class="chart-src mono">Source : Hit-Paradys, durées moyennes des titres charts — estimation.</p>
+    </figure>
+
+    <figure class="chart-card" data-reveal>
+      <figcaption>
+        <h3>Où se fait l'argent de la musique</h3>
+        <p class="muted">Le streaming passe devant la vente physique : le morceau devient un flux, puis un abonnement.</p>
+      </figcaption>
+      <div class="chart" id="chart-revenue"></div>
+      <p class="chart-src mono">Source : IFPI Global Music Report — % des revenus mondiaux.</p>
+    </figure>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-head">
+      <div>
+        <p class="kicker">03 — Test</p>
+        <h2 class="section-title">De quelle époque ça vient&nbsp;?</h2>
+      </div>
+      <button class="btn btn-ghost btn-sm" data-action="quiz-reset">Recommencer</button>
+    </div>
+    <div class="quiz" id="quiz" data-reveal></div>
+  </section>
+
+  <!-- ============ À RETENIR ============ -->
+  <section class="section">
+    <div class="takeaway" data-reveal>
+      <p class="kicker">04 — En résumé</p>
+      <ol class="take-list">
+        <li><p><strong>Le support commande le son.</strong> Bande étroite et parasites en 78 tours, craquements du vinyle, brillance numérique du CD, puis compression : chaque support a laissé une couleur.</p></li>
+        <li><p><strong>La durée suit le format.</strong> Face de disque, puis single de trois minutes, puis CD entier, puis deux minutes de flux — et la chanson a dû apprendre à convaincre en quinze secondes.</p></li>
+        <li><p><strong>Rien de neuf sous le soleil.</strong> <em>Love</em> (2007) recycle le <em>Philadelphia Sound</em> ; l'ambiant de 2020 recycle le krautrock et le dub des années 70.</p></li>
+        <li><p><strong>Les outils redeviennent des objets.</strong> Après trente ans de plateformes, le synthé, la cassette et le vinyle redeviennent ce qu'ils ont toujours été : des instruments.</p></li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-top">
+    <a href="#top" class="brand brand-lg">
+      <span class="brand-disc" aria-hidden="true"></span>
+      CHRONOSON
+    </a>
+    <nav class="footer-cols" aria-label="Pied de page">
+      <div><h3>Frise</h3><a href="#frise">Les 10 époques</a><a href="#ecouter">Salle d'écoute</a><a href="#quiz">Quiz</a></div>
+      <div><h3>Analyses</h3><a href="#inventions">Inventions</a><a href="#courbes">Courbes</a><a href="#top">Synthèse</a></div>
+      <div><h3>Sources</h3><a href="https://www.ifpi.org/" rel="noopener">IFPI</a><a href="https://www.britannica.com/art/music" rel="noopener">Britannica — Music</a><a href="https://www.bbc.co.uk/culture" rel="noopener">BBC Culture</a></div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span class="muted">© 2026 Chronoson — page éditoriale, sans but lucratif</span>
+    <span class="mono">HTML · CSS · JS — aucune dépendance, aucun fichier audio</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
