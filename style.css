@@ -183,7 +183,10 @@ body.is-playing .vinyl{animation-play-state:running}
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;
   padding-top:20%;
   color:#fff;transition:background .6s ease;
+  /* le disque tourne, l'étiquette reste lisible */
+  animation:spin 9s linear infinite reverse;animation-play-state:paused;
 }
+body.is-playing .vinyl-label{animation-play-state:running}
 .vinyl-year{font-size:clamp(19px,3.4vw,28px);letter-spacing:.02em}
 .vinyl-style{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.92}
 .art-caption{text-align:center;color:var(--muted);max-width:34ch;font-size:12px}
